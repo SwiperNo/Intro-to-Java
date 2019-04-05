@@ -1,0 +1,114 @@
+import javax.swing.JOptionPane;//Needed for GUI
+import java.io.*;
+
+public class DTTestAverage
+{//Begin Class
+	public static void main(String[] args) throws IOException
+
+	// For reader's input
+		      //Define TestScore 1
+			 	         //Define TestScore 2
+			 	       //Define TestScore 3
+			 	     //Define AverageScore
+
+	{//Begin main method
+
+		double average,            //Define AverageScore
+	           testOne,           //Define test 1
+		   testTwo,          //Define test 2
+		   testThree,       //Define test 3
+		   testFour,       //Define test 4
+		   testFive;      //Define test 5
+		int grade;           //Define grade
+		String inputString; //For reader's input
+
+
+		// Get the score of the first test.
+		inputString =
+		  JOptionPane.showInputDialog("\t\nEnter the score of your first test: ");
+		testOne = Double.parseDouble(inputString);
+		determineGrade(grade);
+
+		// Get the score of the second test.
+		inputString=
+		  JOptionPane.showInputDialog("\t\nEnter the score of your second test: ");
+		testTwo = Double.parseDouble(inputString);
+		determineGrade(grade);
+
+		// Get the score of the third test.
+		inputString=
+		  JOptionPane.showInputDialog("\t\nEnter the score of your third test: ");
+		testThree = Double.parseDouble(inputString);
+		determineGrade(grade);
+
+		// Get the score of the fourth test.
+		inputString=
+		  JOptionPane.showInputDialog("\t\nEnter the score of your fourth test: ");
+		testFour = Double.parseDouble(inputString);
+		determineGrade(grade);
+
+		// Get the score of the fifth test.
+		inputString=
+		  JOptionPane.showInputDialog("\t\nEnter the score of your fifth test: ");
+		testFive = Double.parseDouble(inputString);
+		determineGrade(grade);
+
+		// Get the average.
+		average = calcAverage(testOne, testTwo, testThree, testFour, testFive);
+
+		// Display the results.
+		displayResults(average);
+
+		// End the program.
+		System.exit(0);
+	}
+
+	public static double calcAverage(double testOne, double testTwo, double testThree, double testFour, double testFive)
+	{
+		// Get the average of the 5 tests.
+		return (testOne + testTwo + testThree + testFour + testFive) / 5.0;
+	}
+
+	public static void determineGrade(int grade)
+	{
+
+		// Display the letter grade of the average.
+		if (grade < 60)
+		{
+			System.out.println("Your letter grade is a F.");
+		}
+		else
+			{
+				if (grade < 70)
+				{
+					System.out.println("Your letter grade is a D.");
+				}
+				else
+				{
+					if (grade < 80)
+					{
+						System.out.println("Your letter grade is a C.");
+					}
+					else
+					{
+						if (grade < 90)
+						{
+							System.out.println("Your letter grade is a B.");
+						}
+						else
+						{
+							System.out.println("Your letter grade is a A.");
+						}
+					}
+				}
+			}
+
+		// Return the letter grade.
+	}
+
+	public static void displayResults(double average)
+	{
+		// Display the average of the test scores and the letter grade of average.
+		System.out.println("The average of your test scores is " + average + ".");
+	}
+}

@@ -1,0 +1,84 @@
+import java.util.Scanner;
+
+
+
+
+
+
+
+public class TestAveGrade {
+  
+public static double calcAverage(double userScore1, double userScore2, double userScore3, double userScore4, double userScore5)
+{
+double average;
+average = ((userScore1 + userScore2 + userScore3 + userScore4 + userScore5) / 5);
+return average;
+}
+
+
+
+
+public static String determineGrade(double testScore)
+{
+
+String letterGrade = " ";
+  
+if (testScore < 60){
+letterGrade = "F";
+} else if (testScore <70) {
+letterGrade = "D";
+}else if (testScore <80) {
+letterGrade = "C";
+}else if (testScore <90) {
+letterGrade = "B";
+}else if (testScore <100) {
+letterGrade = "A";
+}
+return letterGrade;
+}
+
+
+public static void main( String [] args) {
+Scanner scanner = new Scanner( System.in );
+int numberOfScores = 5;
+double userScore;
+double userScore1 = 0;
+double userScore2 = 0;
+double userScore3 = 0;
+double userScore4 = 0;
+double userScore5 = 0;
+  
+String outputString = "The letter grades are as follows:\n";
+  
+for(int currentScore = 1; currentScore <= numberOfScores; currentScore++){
+System.out.print ("Enter test grade for student " + currentScore+":");
+userScore = scanner.nextDouble();
+  
+switch (currentScore) {
+case 1:
+userScore1 = userScore1;
+outputString += "Student "+ userScore1 + determineGrade( userScore1) +"\n";
+break;
+case 2:
+userScore2 = userScore2;
+outputString += "Student "+ determineGrade (userScore2) + "\n";
+break;
+case 3:
+userScore2 = userScore3;
+outputString += "Student "+ determineGrade (userScore3) + "\n";
+break;
+case 4:
+userScore2 = userScore4;
+outputString += "Student "+ determineGrade (userScore4) + "\n";
+break;
+case 5:
+userScore2 = userScore5;
+outputString += "Student "+ determineGrade (userScore5) + "\n";
+break;
+default:
+break;
+  
+}
+}
+System.out.print( outputString + "Average:" + calcAverage (userScore1, userScore2, userScore3, userScore4, userScore5));
+}}
